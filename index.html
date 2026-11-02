@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sujan Khatiwada | Computer Engineer, Data Science &amp; Machine Learning</title>
+<meta name="description" content="Portfolio of Sujan Khatiwada, computer engineer focused on data science, machine learning and NLP.">
+<meta property="og:title" content="Sujan Khatiwada | Portfolio">
+<meta property="og:description" content="Computer engineer focused on data science, machine learning and NLP.">
+<meta property="og:url" content="https://ersujan.com.np">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Sections">
+    <a href="#about">About</a><a href="#projects">Projects</a><a href="#demo">Try it</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <div class="photo">
+      <span aria-hidden="true">SK</span>
+      <img src="photo.jpg" alt="Portrait of Sujan Khatiwada" width="176" height="176" onerror="this.remove()">
+    </div>
+    <div>
+      <h1>Sujan Khatiwada</h1>
+      <p class="role">Computer engineer working on data science, machine learning and NLP.</p>
+      <div class="btns">
+        <a class="btn primary" href="Sujan_Khatiwada_CV.pdf">Download CV</a>
+        <a class="btn" href="#projects">See projects</a>
+        <a class="btn" href="mailto:sujankhatiwada321@gmail.com">Email me</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p class="text">I recently finished my Bachelor of Computer Engineering in Nepal. My final-year project was a neural machine translator for Nepal Bhasa (Newari), a low-resource language, where I led the backend. I enjoy building complete data and machine learning pipelines, from cleaning data to serving a model through an API. I am now looking to continue with a master’s degree in data science.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="row">
+        <div class="when">2025 – 2026</div>
+        <div>
+          <h3>English to Nepal Bhasa (Newari) neural machine translator</h3>
+          <p class="sub">Lead backend developer, bachelor’s final-year engineering project</p>
+          <ul>
+            <li>Fine-tuned Meta’s NLLB-200 (distilled, 600M parameters) with PyTorch on Google Colab, using gradient accumulation to work within limited GPU memory.</li>
+            <li>Built an asynchronous REST API with FastAPI and Uvicorn that handles model inference, tokenization and JSON translation mappings.</li>
+            <li>Worked with teammates to connect the Python backend to a React frontend for real-time translation.</li>
+            <li>Collected, tokenized and cleaned a custom parallel corpus of over 1,000 sentence pairs to deal with the scarcity of Newari data.</li>
+          </ul>
+          <div class="tags"><span>PyTorch</span><span>Transformers</span><span>FastAPI</span><span>React</span><span>NLP</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2026</div>
+        <div>
+          <h3>Data science and predictive analytics workflow</h3>
+          <p class="sub">Python data science project</p>
+          <ul>
+            <li>Built end-to-end data pipelines covering data collection, cleaning, feature engineering and exploratory data analysis.</li>
+            <li>Trained and evaluated supervised machine learning models on complex datasets with Scikit-Learn.</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>NumPy</span></div>
+        </div>
+      </div>
+      <p><a href="https://github.com/sujankhatiwada4x">More code on GitHub</a></p>
+    </section>
+
+    <section id="demo">
+      <h2>Try it: how a model reads a sentence</h2>
+      <p class="text">Language models don’t read whole words. They cut text into small pieces called tokens. Type a sentence or pick a preset and see how many pieces it takes. The tokenizer below has a small English-leaning vocabulary, so Nepali and Nepal Bhasa fall apart into single characters. This is the problem I faced with a low-resource language.</p>
+      <div class="demo">
+        <div class="presets" id="presets" role="group" aria-label="Example sentences"></div>
+        <label for="tok-input" class="sub">Your sentence</label>
+        <textarea id="tok-input" spellcheck="false"></textarea>
+        <p class="stats" id="tok-stats" aria-live="polite"></p>
+        <div class="tokens" id="tok-out"></div>
+        <p class="note">Dashed pieces are not in the vocabulary, so they are split into single characters. This is a simplified demo, not the real NLLB-200 tokenizer, which is trained on far more text. Languages with less training text still tend to need more pieces per word.</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="row">
+        <div class="when">02/2022 – 03/2026</div>
+        <div>
+          <h3>Bachelor of Computer Engineering (EQF Level 6)</h3>
+          <p class="sub">Madan Bhandari College of Engineering, affiliated with Pokhara University, Urlabari, Nepal</p>
+          <ul>
+            <li><strong>Core computer science:</strong> data structures and algorithms, object-oriented programming (C++, Java, Python), databases, operating systems, theory of computation.</li>
+            <li><strong>Hardware and architecture:</strong> microprocessors and assembly, computer architecture, embedded systems, logic circuits, computer networks.</li>
+            <li><strong>AI and software engineering:</strong> artificial intelligence, image processing and pattern recognition, object-oriented software engineering, system analysis and design.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt><dd>Python, JavaScript, C, C++, Java, SQL, HTML/CSS</dd>
+        <dt>Frameworks and ML</dt><dd>PyTorch, Scikit-Learn, Pandas, NumPy, NLLB-200, FastAPI, Uvicorn, React</dd>
+        <dt>Tools</dt><dd>Git, GitHub, GitLab, Docker, Linux, Anaconda, Google Colab, VS Code</dd>
+        <dt>Concepts</dt><dd>NLP, data pipelines, REST APIs, asynchronous programming (ASGI), software engineering</dd>
+        <dt>Spoken languages</dt><dd>English (C1 Advanced), Nepali (native)</dd>
+      </dl>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Damak, Koshi Province, Nepal<br>
+      Email: <a href="mailto:sujankhatiwada321@gmail.com">sujankhatiwada321@gmail.com</a><br>
+      GitHub: <a href="https://github.com/sujankhatiwada4x">github.com/sujankhatiwada4x</a><br>
+      LinkedIn: <a href="https://linkedin.com/in/er-sujan-khatiwada">linkedin.com/in/er-sujan-khatiwada</a></p>
+    </section>
+
+    <footer>© <span id="yr">2026</span> Sujan Khatiwada</footer>
+  </main>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
