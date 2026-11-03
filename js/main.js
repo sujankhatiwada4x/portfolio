@@ -76,7 +76,7 @@ input.addEventListener('input', () => {
 
 // ---- CV viewer and gated download ----
 // Paste the Web app URL from your Google Apps Script deployment here.
-const CV_FORM_URL = 'https://script.google.com/macros/s/AKfycbx0XcMMdzjtTX0AQkTIqKflIvRLlLvI3olRkDd5CA7RzMJoI-6WWSX3uzgohY5rmn0HRg/exec';
+const CV_FORM_URL = 'https://script.google.com/macros/s/AKfycbzsi6gIDxYA2jMPPtg1l-FtK6ddPw-QGTMS1Hk26AdErFhNSh2yWpIlaWScukJcYIio/exec';
 
 (function () {
   const dlg = document.getElementById('cv-dialog');
