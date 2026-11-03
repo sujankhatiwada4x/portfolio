@@ -89,6 +89,9 @@ const CV_FORM_URL = 'PASTE_YOUR_WEB_APP_URL_HERE';
   document.getElementById('cv-close').addEventListener('click', () => dlg.close());
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 
+  const img = document.getElementById('cv-img');
+  img.addEventListener('click', () => img.classList.toggle('zoom'));
+
   toggle.addEventListener('click', () => {
     form.hidden = !form.hidden;
     if (!form.hidden) form.elements.name.focus();
