@@ -28,7 +28,7 @@
       <h1>Sujan Khatiwada</h1>
       <p class="role">Computer engineer working on data science, machine learning and NLP.</p>
       <div class="btns">
-        <a class="btn primary" href="Sujan_Khatiwada_CV.pdf">Download CV</a>
+        <button class="btn primary" type="button" id="cv-open">View CV</button>
         <a class="btn" href="#projects">See projects</a>
         <a class="btn" href="mailto:sujankhatiwada321@gmail.com">Email me</a>
       </div>
@@ -123,6 +123,27 @@
     <footer>© <span id="yr">2026</span> Sujan Khatiwada</footer>
   </main>
 </div>
+<dialog id="cv-dialog" aria-labelledby="cv-title">
+  <div class="dlg-head">
+    <h2 id="cv-title">My CV</h2>
+    <button type="button" class="btn" id="cv-close">Close</button>
+  </div>
+  <div class="dlg-body">
+    <img class="cv-page" src="cv/page-1.jpg" alt="Sujan Khatiwada's CV, page 1">
+  </div>
+  <div class="dlg-foot">
+    <button type="button" class="btn primary" id="cv-dl-toggle">Download CV</button>
+    <form id="cv-form" hidden>
+      <p class="sub">Enter your details and I will email you the PDF.</p>
+      <label>Name <input name="name" required autocomplete="name" maxlength="100"></label>
+      <label>Email <input name="email" type="email" required autocomplete="email" maxlength="200"></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="note">I store your name and email only to send you the CV and to know who downloaded it.</p>
+      <button type="submit" class="btn primary" id="cv-send">Send me the CV</button>
+      <p id="cv-msg" role="status"></p>
+    </form>
+  </div>
+</dialog>
 <script src="js/main.js"></script>
 </body>
 </html>

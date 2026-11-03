@@ -65,3 +65,23 @@ footer{margin-top:60px;padding:26px 0 48px;border-top:1px solid var(--line);colo
   .row,.skills{grid-template-columns:1fr}
   nav{justify-content:flex-start}
 }
+
+/* CV viewer */
+dialog{width:min(720px,94vw);max-height:90vh;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+.dlg-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.dlg-head h2{margin:0;font-size:22px}
+.dlg-head .btn{padding:6px 14px;font-size:14px}
+.dlg-body{overflow:auto;background:var(--panel);padding:16px}
+.cv-page{display:block;width:100%;height:auto;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+.dlg-foot{padding:14px 18px;border-top:1px solid var(--line)}
+#cv-form{margin-top:14px;display:grid;gap:12px}
+#cv-form label{display:grid;gap:4px;font-size:14px;color:var(--muted)}
+#cv-form input:not(.hp){padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:17px var(--sans)}
+#cv-form .sub,#cv-form .note,#cv-msg{margin:0}
+#cv-form button{justify-self:start}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+#cv-msg{font-size:15px}
+#cv-msg.ok{color:var(--accent)}
+#cv-msg.err{color:#C0392B}

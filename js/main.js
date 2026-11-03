@@ -73,3 +73,41 @@ input.addEventListener('input', () => {
   presetBox.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', 'false'));
   render();
 });
+
+// ---- CV viewer and gated download ----
+// Paste the Web app URL from your Google Apps Script deployment here.
+const CV_FORM_URL = 'PASTE_YOUR_WEB_APP_URL_HERE';
+
+(function () {
+  const dlg = document.getElementById('cv-dialog');
+  const form = document.getElementById('cv-form');
+  const msg = document.getElementById('cv-msg');
+  const sendBtn = document.getElementById('cv-send');
+  const toggle = document.getElementById('cv-dl-toggle');
+
+  document.getElementById('cv-open').addEventListener('click', () => dlg.showModal());
+  document.getElementById('cv-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  toggle.addEventListener('click', () => {
+    form.hidden = !form.hidden;
+    if (!form.hidden) form.elements.name.focus();
+  });
+
+  function say(text, cls) { msg.textContent = text; msg.className = cls || ''; }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (CV_FORM_URL.startsWith('PASTE')) { say('The download form is not connected yet.', 'err'); return; }
+    sendBtn.disabled = true; say('Sending…');
+    try {
+      const res = await fetch(CV_FORM_URL, { method: 'POST', body: new URLSearchParams(new FormData(form)) });
+      const data = await res.json();
+      if (data.ok) { say('Done! The CV is on its way to your inbox. Please check your spam folder too.', 'ok'); form.reset(); }
+      else say(data.error || 'Something went wrong. Please try again.', 'err');
+    } catch (err) {
+      say('Something went wrong. Please email me at sujankhatiwada321@gmail.com.', 'err');
+    }
+    sendBtn.disabled = false;
+  });
+})();
