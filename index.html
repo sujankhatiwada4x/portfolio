@@ -124,29 +124,21 @@
   </main>
 </div>
 <dialog id="cv-dialog" aria-labelledby="cv-title">
-  <div class="dlg-head">
-    <h2 id="cv-title">My CV</h2>
-    <button type="button" class="btn" id="cv-close">Close</button>
+  <div class="vbar">
+    <span class="vt" id="cv-title">Sujan Khatiwada: CV</span>
+    <a class="vb go" href="Sujan_Khatiwada_CV.pdf" download>Download CV</a>
+    <button type="button" class="vb" id="cv-dl-toggle">Email me a copy</button>
+    <button type="button" class="vb" id="cv-close">Close</button>
   </div>
-  <div class="dlg-body">
-    <img class="cv-page" id="cv-img" src="cv/page-1.jpg" alt="Sujan Khatiwada's CV, page 1" title="Click to zoom">
-  </div>
-  <div class="dlg-foot">
-    <div class="dlg-actions">
-      <a class="btn primary" href="Sujan_Khatiwada_CV.pdf" download>Download CV</a>
-      <button type="button" class="btn" id="cv-dl-toggle">Email me the CV</button>
-      <span class="hint">Click or tap the page to zoom</span>
-    </div>
-    <form id="cv-form" hidden>
-      <p class="sub">Enter your details and I will email you the PDF.</p>
-      <label>Name <input name="name" required autocomplete="name" maxlength="100"></label>
-      <label>Email <input name="email" type="email" required autocomplete="email" maxlength="200"></label>
-      <input class="hp" name="hp_check" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <p class="note">I store your name and email only to send you the CV and to know who downloaded it.</p>
-      <button type="submit" class="btn primary" id="cv-send">Send me the CV</button>
-      <p id="cv-msg" role="status"></p>
-    </form>
-  </div>
+  <form id="cv-form" class="vf" hidden>
+    <input name="name" placeholder="Your name" required autocomplete="name" maxlength="100">
+    <input name="email" type="email" placeholder="Your email" required autocomplete="email" maxlength="200">
+    <input class="hp" name="hp_check" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="vb go" id="cv-send">Send</button>
+    <p class="vn">I store your name and email only to send you the CV and to know who asked for it.</p>
+    <p id="cv-msg" role="status"></p>
+  </form>
+  <div class="vs"><img class="cv-page" id="cv-img" src="cv/page-1.jpg" alt="Sujan Khatiwada's CV" title="Click to zoom"></div>
 </dialog>
 <script src="js/main.js"></script>
 </body>

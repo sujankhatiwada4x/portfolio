@@ -66,31 +66,20 @@ footer{margin-top:60px;padding:26px 0 48px;border-top:1px solid var(--line);colo
   nav{justify-content:flex-start}
 }
 
-/* CV viewer */
-dialog{width:min(720px,94vw);max-height:90vh;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+/* CV viewer: full screen, toolbar on top */
+dialog{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;padding:0;background:#1b1b1b;color:#fff}
 dialog[open]{display:flex;flex-direction:column}
-dialog::backdrop{background:rgba(0,0,0,.55)}
-.dlg-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
-.dlg-head h2{margin:0;font-size:22px}
-.dlg-head .btn{padding:6px 14px;font-size:14px}
-.dlg-body{overflow:auto;background:var(--panel);padding:16px}
-.cv-page{display:block;width:100%;height:auto;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.25)}
-.dlg-foot{padding:14px 18px;border-top:1px solid var(--line)}
-#cv-form{margin-top:14px;display:grid;gap:12px}
-#cv-form label{display:grid;gap:4px;font-size:14px;color:var(--muted)}
-#cv-form input:not(.hp){padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:17px var(--sans)}
-#cv-form .sub,#cv-form .note,#cv-msg{margin:0}
-#cv-form button{justify-self:start}
+.vbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 14px;background:#101010;border-bottom:1px solid #333}
+.vt{flex:1;min-width:120px;font-size:14px;color:#aaa}
+.vb{font:500 14px var(--sans);padding:8px 16px;border-radius:7px;border:1px solid #555;background:none;color:#fff;cursor:pointer;text-decoration:none}
+.vb.go{background:#fff;color:#111;border-color:#fff}
+.vf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 14px;background:#181818;border-bottom:1px solid #333}
+.vf[hidden]{display:none}
+.vf input:not(.hp){flex:1;min-width:140px;padding:9px 11px;border-radius:7px;border:1px solid #555;background:#0e0e0e;color:#fff;font:16px var(--sans)}
+.vn,#cv-msg{width:100%;margin:0;font-size:13px;color:#aaa}
+#cv-msg.ok{color:#7EE0A0}
+#cv-msg.err{color:#FF8A80}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-#cv-msg{font-size:15px}
-#cv-msg.ok{color:var(--accent)}
-#cv-msg.err{color:#C0392B}
-
-/* CV viewer: larger, full page fits the window */
-dialog{width:min(1000px,98vw);height:96vh;height:96dvh;max-height:96dvh}
-.dlg-body{flex:1 1 auto;min-height:0;padding:12px;text-align:center}
-.cv-page{display:inline-block;width:auto;height:calc(96dvh - 190px);max-width:100%;object-fit:contain;cursor:zoom-in}
-.cv-page.zoom{width:100%;height:auto;max-width:none;cursor:zoom-out}
-.dlg-foot{max-height:50%;overflow:auto}
-.dlg-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.dlg-actions .hint{color:var(--muted);font-size:13px}
+.vs{flex:1;min-height:0;overflow:auto;padding:14px}
+.cv-page{display:block;margin:0 auto;width:min(100%,980px);height:auto;background:#fff;cursor:zoom-in}
+.cv-page.zoom{width:max(100%,1500px);cursor:zoom-out}
